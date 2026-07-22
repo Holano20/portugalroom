@@ -1,24 +1,374 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { useState } from "react";
+import {
+  Globe2,
+  ShieldCheck,
+  TrendingUp,
+  Sparkles,
+  MapPin,
+  Building2,
+  Award,
+  ArrowRight,
+  Mail,
+  CheckCircle2,
+} from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { Label } from "@/components/ui/label";
+import { toast } from "sonner";
+import { Toaster } from "@/components/ui/sonner";
+import heroImage from "@/assets/portugal-hero.jpg";
 
-// No head() here: the home route inherits title/description/og/twitter from
-// __root.tsx, and ships no og:image so serve-time hosting can inject the
-// project's social preview (explicit og:image or latest screenshot).
 export const Route = createFileRoute("/")({
-  component: Index,
+  head: () => ({
+    meta: [
+      { title: "PortugalRoom.com — Premium Domain For Sale" },
+      {
+        name: "description",
+        content:
+          "PortugalRoom.com — a rare, brandable premium domain for hospitality, real estate, and travel ventures in Portugal. Make an offer today.",
+      },
+      { property: "og:title", content: "PortugalRoom.com — Premium Domain For Sale" },
+      {
+        property: "og:description",
+        content:
+          "A rare, brandable premium domain built for Portugal's booming hospitality, real estate and travel market.",
+      },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
+    ],
+  }),
+  component: LandingPage,
 });
 
-// IMPORTANT: Replace this placeholder. See ./README.md for routing conventions.
-function Index() {
+function LandingPage() {
   return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
-    >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
-      />
+    <div className="min-h-screen bg-background text-foreground overflow-x-hidden">
+      <Toaster position="top-center" richColors />
+      <Nav />
+      <Hero />
+      <Features />
+      <Value />
+      <Contact />
+      <Footer />
     </div>
+  );
+}
+
+function Logo({ className = "" }: { className?: string }) {
+  return (
+    <div className={`flex items-center gap-2.5 ${className}`}>
+      <div className="relative">
+        <div className="w-10 h-10 rounded-xl bg-hero shadow-card-luxe flex items-center justify-center">
+          <div className="w-5 h-5 border-[1.5px] border-white/90 rounded-sm rotate-45" />
+        </div>
+        <div className="absolute inset-0 rounded-xl bg-hero blur-xl opacity-40 -z-10" />
+      </div>
+      <div className="leading-none">
+        <div className="font-display text-xl font-semibold tracking-tight">
+          Portugal<span className="text-gradient">Room</span>
+        </div>
+        <div className="text-[10px] uppercase tracking-[0.25em] text-muted-foreground mt-0.5">
+          .com · Premium Domain
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function Nav() {
+  return (
+    <header className="fixed top-0 inset-x-0 z-50 backdrop-blur-xl bg-background/70 border-b border-border/60">
+      <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+        <Logo />
+        <nav className="hidden md:flex items-center gap-8 text-sm text-muted-foreground">
+          <a href="#features" className="hover:text-foreground transition-colors">Features</a>
+          <a href="#value" className="hover:text-foreground transition-colors">Why It Matters</a>
+          <a href="#contact" className="hover:text-foreground transition-colors">Contact</a>
+        </nav>
+        <Button
+          asChild
+          size="sm"
+          className="bg-hero text-white shadow-card-luxe hover:opacity-95 hover:scale-[1.02] transition-all"
+        >
+          <a href="#contact">Make an Offer <ArrowRight className="ml-1 w-4 h-4" /></a>
+        </Button>
+      </div>
+    </header>
+  );
+}
+
+function Hero() {
+  return (
+    <section className="relative pt-40 pb-32 px-6 overflow-hidden">
+      <div className="absolute -top-40 -right-40 w-[600px] h-[600px] rounded-full bg-primary-glow/20 blur-3xl animate-float" />
+      <div className="absolute top-40 -left-32 w-[500px] h-[500px] rounded-full bg-primary/15 blur-3xl animate-float" style={{ animationDelay: "2s" }} />
+
+      <div className="max-w-7xl mx-auto relative">
+        <div className="grid lg:grid-cols-[1.15fr_1fr] gap-16 items-center">
+          <div className="animate-fade-up">
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-primary/20 bg-primary/5 text-xs uppercase tracking-[0.2em] text-primary font-medium mb-8">
+              <Sparkles className="w-3.5 h-3.5" />
+              Rare · Available Now
+            </div>
+
+            <h1 className="font-display text-6xl md:text-7xl lg:text-8xl font-medium leading-[0.95] tracking-tight">
+              Portugal<span className="text-gradient italic">Room</span>
+              <span className="text-muted-foreground font-normal">.com</span>
+            </h1>
+
+            <p className="mt-8 text-xl text-muted-foreground max-w-xl leading-relaxed">
+              A once-in-a-generation domain crafted for hospitality, real estate, and travel brands
+              defining Portugal's next chapter.
+            </p>
+
+            <div className="mt-10 flex flex-wrap gap-4">
+              <Button
+                asChild
+                size="lg"
+                className="bg-hero text-white h-14 px-8 text-base shadow-luxe hover:scale-[1.02] transition-transform"
+              >
+                <a href="#contact">
+                  Make an Offer <ArrowRight className="ml-2 w-5 h-5" />
+                </a>
+              </Button>
+              <Button
+                asChild
+                variant="outline"
+                size="lg"
+                className="h-14 px-8 text-base border-primary/20 hover:bg-primary/5"
+              >
+                <a href="#value">Why This Domain</a>
+              </Button>
+            </div>
+
+            <div className="mt-12 flex items-center gap-8 text-sm text-muted-foreground">
+              <div className="flex items-center gap-2"><ShieldCheck className="w-4 h-4 text-primary" /> Escrow secured</div>
+              <div className="flex items-center gap-2"><Award className="w-4 h-4 text-primary" /> Verified ownership</div>
+            </div>
+          </div>
+
+          <div className="relative animate-fade-in" style={{ animationDelay: "0.3s" }}>
+            <div className="relative rounded-3xl overflow-hidden shadow-luxe">
+              <img
+                src={heroImage}
+                alt="Aerial view of Lisbon Portugal"
+                width={1600}
+                height={1000}
+                className="w-full h-[520px] object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-primary/40 via-transparent to-transparent" />
+              <div className="absolute bottom-6 left-6 right-6 backdrop-blur-md bg-white/85 rounded-2xl p-5 border border-white/60">
+                <div className="flex items-center gap-3">
+                  <MapPin className="w-5 h-5 text-primary" />
+                  <div>
+                    <div className="font-display text-lg leading-none">Lisbon · Porto · Algarve</div>
+                    <div className="text-xs text-muted-foreground mt-1">One domain. Every market.</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="absolute -bottom-6 -right-6 -z-10 w-full h-full rounded-3xl bg-hero opacity-30 blur-2xl" />
+          </div>
+        </div>
+
+        <div className="mt-24 grid grid-cols-2 md:grid-cols-4 gap-px bg-border rounded-2xl overflow-hidden border border-border">
+          {[
+            { k: "€27B", v: "Portugal tourism GDP" },
+            { k: "30M+", v: "Annual visitors" },
+            { k: "1 of 1", v: "Exact-match domain" },
+            { k: ".com", v: "Global TLD" },
+          ].map((m) => (
+            <div key={m.v} className="bg-card p-8">
+              <div className="font-display text-4xl text-gradient">{m.k}</div>
+              <div className="text-sm text-muted-foreground mt-2">{m.v}</div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function Features() {
+  const items = [
+    { icon: Globe2, title: "Instant Global Trust", desc: "A .com is the universal signal of legitimacy. Zero explanation required." },
+    { icon: Sparkles, title: "Brandable & Memorable", desc: "Two words. One meaning. Impossible to mistype, impossible to forget." },
+    { icon: Building2, title: "Category Defining", desc: "Perfect for hotel groups, booking platforms, coliving, and luxury rentals." },
+    { icon: TrendingUp, title: "SEO Advantage", desc: "Exact-match keywords drive organic authority from day one." },
+    { icon: ShieldCheck, title: "Legally Clean", desc: "Fully owned, unencumbered, and transferable via secure escrow." },
+    { icon: Award, title: "Investment Grade", desc: "Premium geo domains have historically appreciated in double digits." },
+  ];
+  return (
+    <section id="features" className="py-32 px-6 relative">
+      <div className="max-w-7xl mx-auto">
+        <div className="max-w-2xl mb-20">
+          <div className="text-xs uppercase tracking-[0.25em] text-primary mb-4">Features</div>
+          <h2 className="font-display text-5xl md:text-6xl font-medium leading-tight">
+            Built to be the <span className="text-gradient italic">flagship</span> of your brand.
+          </h2>
+        </div>
+
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {items.map((it) => (
+            <div
+              key={it.title}
+              className="group relative p-8 rounded-2xl bg-card border border-border hover:border-primary/30 hover:shadow-card-luxe hover:-translate-y-1 transition-all duration-500"
+            >
+              <div className="w-12 h-12 rounded-xl bg-hero flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-500">
+                <it.icon className="w-6 h-6 text-white" />
+              </div>
+              <h3 className="font-display text-2xl mb-3">{it.title}</h3>
+              <p className="text-muted-foreground leading-relaxed">{it.desc}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function Value() {
+  const bullets = [
+    "Portugal is Europe's fastest-growing luxury tourism market.",
+    "'Room' universally signals hospitality, stays, and reservations.",
+    "Ideal for bookings, coliving, boutique hotels, or short-term rentals.",
+    "Golden Visa & digital nomad influx sustains long-term demand.",
+    "Two words. One meaning. Unforgettable branding.",
+    "Exact-match .com domains sell for six to seven figures annually.",
+  ];
+  return (
+    <section id="value" className="py-32 px-6 relative">
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-primary/[0.03] to-transparent" />
+      <div className="max-w-7xl mx-auto relative">
+        <div className="grid lg:grid-cols-2 gap-20 items-center">
+          <div>
+            <div className="text-xs uppercase tracking-[0.25em] text-primary mb-4">Why This Domain</div>
+            <h2 className="font-display text-5xl md:text-6xl font-medium leading-tight mb-8">
+              A domain isn't a cost. It's a <span className="text-gradient italic">position</span>.
+            </h2>
+            <p className="text-lg text-muted-foreground leading-relaxed mb-10">
+              PortugalRoom.com sits at the intersection of the world's most desired destination
+              and the most universal word in hospitality. It's the kind of asset that founders,
+              investors, and hospitality groups compete for — rarely for sale, never for long.
+            </p>
+            <Button
+              asChild
+              size="lg"
+              className="bg-hero text-white h-14 px-8 shadow-luxe hover:scale-[1.02] transition-transform"
+            >
+              <a href="#contact">Secure This Domain <ArrowRight className="ml-2 w-5 h-5" /></a>
+            </Button>
+          </div>
+
+          <div className="space-y-3">
+            {bullets.map((b) => (
+              <div
+                key={b}
+                className="flex items-start gap-4 p-5 rounded-xl bg-card border border-border hover:border-primary/30 hover:translate-x-1 transition-all duration-300"
+              >
+                <CheckCircle2 className="w-6 h-6 text-primary flex-shrink-0 mt-0.5" />
+                <p className="text-foreground/90">{b}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function Contact() {
+  const [loading, setLoading] = useState(false);
+  const [form, setForm] = useState({ name: "", email: "", offer: "", message: "" });
+
+  const submit = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!form.name || !form.email) {
+      toast.error("Please enter your name and email.");
+      return;
+    }
+    setLoading(true);
+    setTimeout(() => {
+      setLoading(false);
+      toast.success("Offer received. We'll be in touch within 24 hours.");
+      setForm({ name: "", email: "", offer: "", message: "" });
+    }, 900);
+  };
+
+  return (
+    <section id="contact" className="py-32 px-6 relative">
+      <div className="max-w-5xl mx-auto">
+        <div className="relative rounded-3xl overflow-hidden shadow-luxe border border-border">
+          <div className="absolute inset-0 bg-hero" />
+          <div
+            className="absolute inset-0 opacity-30"
+            style={{
+              backgroundImage:
+                "radial-gradient(circle at 20% 30%, white 0%, transparent 40%), radial-gradient(circle at 80% 70%, white 0%, transparent 40%)",
+            }}
+          />
+
+          <div className="relative grid md:grid-cols-2 gap-0">
+            <div className="p-12 md:p-14 text-white">
+              <div className="text-xs uppercase tracking-[0.25em] text-white/70 mb-4">Make an Offer</div>
+              <h2 className="font-display text-4xl md:text-5xl font-medium leading-tight mb-6">
+                Own the address of Portugal's next great brand.
+              </h2>
+              <p className="text-white/80 leading-relaxed mb-10">
+                Submit a serious inquiry and receive a response within 24 hours. All transactions
+                are handled through Escrow.com for complete security.
+              </p>
+              <div className="space-y-4 text-sm">
+                <div className="flex items-center gap-3"><Mail className="w-4 h-4" /> offers@portugalroom.com</div>
+                <div className="flex items-center gap-3"><ShieldCheck className="w-4 h-4" /> Escrow.com secured transfer</div>
+                <div className="flex items-center gap-3"><Award className="w-4 h-4" /> Verified premium listing</div>
+              </div>
+            </div>
+
+            <form onSubmit={submit} className="p-10 md:p-12 bg-background/95 backdrop-blur-xl space-y-5">
+              <div>
+                <Label htmlFor="name" className="mb-2 block">Full name</Label>
+                <Input id="name" value={form.name} onChange={(e) => setForm({ ...form, name: e.target.value })} placeholder="Jane Doe" className="h-12" />
+              </div>
+              <div>
+                <Label htmlFor="email" className="mb-2 block">Email</Label>
+                <Input id="email" type="email" value={form.email} onChange={(e) => setForm({ ...form, email: e.target.value })} placeholder="you@company.com" className="h-12" />
+              </div>
+              <div>
+                <Label htmlFor="offer" className="mb-2 block">Offer (USD)</Label>
+                <Input id="offer" value={form.offer} onChange={(e) => setForm({ ...form, offer: e.target.value })} placeholder="$50,000" className="h-12" />
+              </div>
+              <div>
+                <Label htmlFor="message" className="mb-2 block">Message (optional)</Label>
+                <Textarea id="message" value={form.message} onChange={(e) => setForm({ ...form, message: e.target.value })} placeholder="Tell us about your project…" rows={3} />
+              </div>
+              <Button
+                type="submit"
+                disabled={loading}
+                className="w-full h-14 bg-hero text-white text-base shadow-luxe hover:scale-[1.01] transition-transform"
+              >
+                {loading ? "Submitting…" : "Submit Offer"}
+                <ArrowRight className="ml-2 w-5 h-5" />
+              </Button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function Footer() {
+  return (
+    <footer className="py-12 px-6 border-t border-border">
+      <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
+        <Logo />
+        <div className="text-sm text-muted-foreground">
+          © {new Date().getFullYear()} PortugalRoom.com — All rights reserved.
+        </div>
+      </div>
+    </footer>
   );
 }
