@@ -571,7 +571,12 @@ function Footer() {
         <Logo />
         <div className="text-sm text-muted-foreground text-center md:text-right space-y-1">
           <div className="font-display text-base text-foreground">PortugalRoom.com</div>
-          <div>Premium Domain Available for Acquisition</div>
+          <div>Premium Domain for Sale</div>
+          <div>
+            <a href="mailto:roominportugal@gmail.com" className="hover:text-foreground transition-colors">
+              roominportugal@gmail.com
+            </a>
+          </div>
           <div>Transfer secured via Escrow.com or GoDaddy</div>
           <div className="pt-2">© 2026 PortugalRoom.com — All rights reserved.</div>
         </div>
