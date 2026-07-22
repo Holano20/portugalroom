@@ -340,7 +340,7 @@ function Value() {
               size="lg"
               className="bg-hero text-white h-14 px-8 shadow-luxe hover:scale-[1.02] transition-transform"
             >
-              <a href="#contact">Secure This Domain <ArrowRight className="ml-2 w-5 h-5" /></a>
+              <a href="#contact">Make an Offer <ArrowRight className="ml-2 w-5 h-5" /></a>
             </Button>
           </div>
 
