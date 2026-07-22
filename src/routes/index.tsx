@@ -24,24 +24,24 @@ import heroImage from "@/assets/portugal-hero.jpg";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "PortugalRoom.com | Premium Domain For Sale" },
+      { title: "PortugalRoom.com — Premium .COM Domain for Portugal Rentals & Hospitality" },
       {
         name: "description",
         content:
-          "Acquire PortugalRoom.com, a premium .COM domain perfect for room rentals, student accommodation, hospitality, travel, and property businesses in Portugal.",
+          "PortugalRoom.com is a premium, brandable .COM domain for room rentals, student housing, coliving, hospitality, travel, and property businesses in Portugal. Secure transfer via Escrow.com or GoDaddy.",
       },
       {
         name: "keywords",
         content:
-          "PortugalRoom, premium domain, domain for sale, Portugal rentals, room rentals Portugal, student accommodation Portugal, coliving Portugal, hospitality domain, brandable .com domain",
+          "PortugalRoom, premium domain, .com domain for sale, Portugal rentals, room rentals Portugal, student accommodation Portugal, coliving Portugal, hospitality domain, brandable domain, Escrow domain transfer",
       },
       { name: "author", content: "PortugalRoom.com" },
       { name: "robots", content: "index, follow" },
-      { property: "og:title", content: "PortugalRoom.com | Premium Domain For Sale" },
+      { property: "og:title", content: "PortugalRoom.com — Premium .COM Domain for Portugal Rentals & Hospitality" },
       {
         property: "og:description",
         content:
-          "Acquire PortugalRoom.com, a premium .COM domain perfect for room rentals, student accommodation, hospitality, travel, and property businesses in Portugal.",
+          "A rare, exact-match .COM domain for Portugal's rental and hospitality market. Brandable, memorable, SEO-friendly. Secure transfer via Escrow.com or GoDaddy.",
       },
       { property: "og:type", content: "website" },
       { property: "og:url", content: "/" },
@@ -49,17 +49,17 @@ export const Route = createFileRoute("/")({
       { property: "og:image", content: "/og-image.jpg" },
       { property: "og:image:width", content: "1200" },
       { property: "og:image:height", content: "630" },
-      { property: "og:image:alt", content: "PortugalRoom.com — Premium Domain For Sale" },
+      { property: "og:image:alt", content: "PortugalRoom.com — Premium .COM Domain for Portugal's Rental & Hospitality Market" },
       { property: "og:locale", content: "en_US" },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:title", content: "PortugalRoom.com | Premium Domain For Sale" },
+      { name: "twitter:title", content: "PortugalRoom.com — Premium .COM Domain for Portugal Rentals & Hospitality" },
       {
         name: "twitter:description",
         content:
-          "Premium .COM domain for Portugal's rental & hospitality market. Brandable, memorable, SEO-friendly.",
+          "Premium .COM domain for Portugal's rental & hospitality market. Brandable, memorable, SEO-friendly. Secure transfer via Escrow.com or GoDaddy.",
       },
       { name: "twitter:image", content: "/og-image.jpg" },
-      { name: "twitter:image:alt", content: "PortugalRoom.com — Premium Domain For Sale" },
+      { name: "twitter:image:alt", content: "PortugalRoom.com — Premium .COM Domain for Portugal's Rental & Hospitality Market" },
     ],
     links: [{ rel: "canonical", href: "/" }],
     scripts: [
