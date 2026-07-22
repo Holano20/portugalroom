@@ -228,9 +228,12 @@ function Hero() {
             <div className="relative rounded-3xl overflow-hidden shadow-luxe">
               <img
                 src={heroImage}
-                alt="Aerial view of Lisbon Portugal"
+                alt="PortugalRoom.com — aerial view of Lisbon, Portugal at golden hour representing the country's rental and hospitality market"
                 width={1600}
                 height={1000}
+                loading="eager"
+                fetchPriority="high"
+                decoding="async"
                 className="w-full h-[520px] object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-primary/40 via-transparent to-transparent" />
