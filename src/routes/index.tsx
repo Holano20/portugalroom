@@ -254,7 +254,7 @@ function Hero() {
         <div className="mt-24 grid grid-cols-2 md:grid-cols-4 gap-px bg-border rounded-2xl overflow-hidden border border-border">
           {[
             { k: "€27B", v: "Portugal tourism GDP" },
-            { k: "30M+", v: "Annual visitors" },
+            { k: "30M+", v: "Annual Tourists" },
             { k: "1 of 1", v: "Exact-match domain" },
             { k: ".com", v: "Global TLD" },
           ].map((m) => (
