@@ -23,24 +23,75 @@ import heroImage from "@/assets/portugal-hero.jpg";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "PortugalRoom.com — Premium Domain For Sale" },
+      { title: "PortugalRoom.com — Premium Domain For Sale | Hospitality & Travel" },
       {
         name: "description",
         content:
-          "PortugalRoom.com — a rare, brandable premium domain for hospitality, real estate, and travel ventures in Portugal. Make an offer today.",
+          "PortugalRoom.com is a rare, brandable premium .com domain built for hospitality, real estate, and travel ventures in Portugal. Escrow-secured. Make an offer today.",
       },
+      {
+        name: "keywords",
+        content:
+          "PortugalRoom, premium domain, domain for sale, Portugal hospitality, Portugal real estate, Lisbon hotels, Porto rentals, Algarve booking, premium .com domain, brandable domain",
+      },
+      { name: "author", content: "PortugalRoom.com" },
+      { name: "robots", content: "index, follow" },
       { property: "og:title", content: "PortugalRoom.com — Premium Domain For Sale" },
       {
         property: "og:description",
         content:
-          "A rare, brandable premium domain built for Portugal's booming hospitality, real estate and travel market.",
+          "A once-in-a-generation .com domain for hospitality, real estate, and travel brands defining Portugal's next chapter.",
       },
       { property: "og:type", content: "website" },
+      { property: "og:url", content: "/" },
+      { property: "og:site_name", content: "PortugalRoom.com" },
+      { property: "og:image", content: "/og-image.jpg" },
+      { property: "og:image:width", content: "1200" },
+      { property: "og:image:height", content: "630" },
+      { property: "og:image:alt", content: "PortugalRoom.com — Premium Domain For Sale" },
+      { property: "og:locale", content: "en_US" },
       { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: "PortugalRoom.com — Premium Domain For Sale" },
+      {
+        name: "twitter:description",
+        content:
+          "A rare, brandable .com domain built for Portugal's booming hospitality and travel market.",
+      },
+      { name: "twitter:image", content: "/og-image.jpg" },
+      { name: "twitter:image:alt", content: "PortugalRoom.com — Premium Domain For Sale" },
+    ],
+    links: [{ rel: "canonical", href: "/" }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Product",
+          name: "PortugalRoom.com",
+          category: "Premium Domain Name",
+          description:
+            "Premium, brandable .com domain for hospitality, real estate, and travel ventures in Portugal.",
+          brand: { "@type": "Brand", name: "PortugalRoom.com" },
+          image: "/og-image.jpg",
+          offers: {
+            "@type": "Offer",
+            availability: "https://schema.org/InStock",
+            priceCurrency: "USD",
+            priceSpecification: {
+              "@type": "PriceSpecification",
+              priceCurrency: "USD",
+              description: "Make an offer",
+            },
+            url: "/",
+            seller: { "@type": "Organization", name: "PortugalRoom.com" },
+          },
+        }),
+      },
     ],
   }),
   component: LandingPage,
 });
+
 
 function LandingPage() {
   return (
