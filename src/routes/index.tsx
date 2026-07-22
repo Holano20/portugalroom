@@ -553,6 +553,9 @@ function Contact() {
                 {loading ? "Submitting…" : "Submit Offer"}
                 <ArrowRight className="ml-2 w-5 h-5" />
               </Button>
+              <p className="text-xs text-muted-foreground text-center pt-1">
+                Serious inquiries only. We usually respond within 24 hours.
+              </p>
             </form>
           </div>
         </div>
