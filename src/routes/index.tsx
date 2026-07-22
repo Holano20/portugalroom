@@ -372,7 +372,7 @@ function Contact() {
                 are handled through Escrow.com for complete security.
               </p>
               <div className="space-y-4 text-sm">
-                <div className="flex items-center gap-3"><Mail className="w-4 h-4" /> offers@portugalroom.com</div>
+                <div className="flex items-center gap-3"><Mail className="w-4 h-4" /> roominportugal@gmail.com</div>
                 <div className="flex items-center gap-3"><ShieldCheck className="w-4 h-4" /> Escrow.com secured transfer</div>
                 <div className="flex items-center gap-3"><Award className="w-4 h-4" /> Verified premium listing</div>
               </div>
