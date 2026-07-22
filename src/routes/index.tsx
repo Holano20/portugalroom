@@ -271,12 +271,12 @@ function Hero() {
 
 function Features() {
   const items = [
-    { icon: Globe2, title: "Premium .COM", desc: "The world's most trusted domain extension that builds credibility instantly." },
-    { icon: Sparkles, title: "Highly Brandable", desc: "Simple, memorable and impossible to forget." },
-    { icon: Building2, title: "Perfect Market Fit", desc: "Ideal for room rentals, student housing, hospitality, travel and coliving." },
-    { icon: TrendingUp, title: "SEO Advantage", desc: "Contains valuable keywords for Portugal accommodation businesses." },
-    { icon: ShieldCheck, title: "Safe Ownership", desc: "Domain ownership is verified and transferred securely." },
-    { icon: Award, title: "Investment Quality", desc: "Premium geographic domains are scarce digital assets with long-term value." },
+    { icon: Globe2, title: "Premium .COM Extension", desc: "The world's most trusted top-level domain — instant credibility with customers, partners, and investors." },
+    { icon: Sparkles, title: "Effortlessly Brandable", desc: "Short, elegant, and unmistakable — a name customers remember the first time they hear it." },
+    { icon: Building2, title: "Precise Market Fit", desc: "Purpose-built for room rentals, student housing, coliving, hospitality, travel, and property brands." },
+    { icon: TrendingUp, title: "Built-in SEO Advantage", desc: "Exact-match keywords for Portugal's accommodation sector — a lasting edge in organic search." },
+    { icon: ShieldCheck, title: "Secure, Verified Ownership", desc: "Privately owned and transferred through Escrow.com or GoDaddy for a fully protected acquisition." },
+    { icon: Award, title: "Long-Term Digital Asset", desc: "Premium geographic .COM domains are scarce, appreciating assets — a foundation, not an expense." },
   ];
   return (
     <section id="features" className="py-32 px-6 relative">
