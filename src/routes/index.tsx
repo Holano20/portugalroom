@@ -11,6 +11,7 @@ import {
   ArrowRight,
   Mail,
   CheckCircle2,
+  Zap,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -23,24 +24,24 @@ import heroImage from "@/assets/portugal-hero.jpg";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "PortugalRoom.com — Premium Domain For Sale | Hospitality & Travel" },
+      { title: "PortugalRoom.com | Premium Domain For Sale" },
       {
         name: "description",
         content:
-          "PortugalRoom.com is a rare, brandable premium .com domain built for hospitality, real estate, and travel ventures in Portugal. Escrow-secured. Make an offer today.",
+          "Acquire PortugalRoom.com, a premium .COM domain perfect for room rentals, student accommodation, hospitality, travel, and property businesses in Portugal.",
       },
       {
         name: "keywords",
         content:
-          "PortugalRoom, premium domain, domain for sale, Portugal hospitality, Portugal real estate, Lisbon hotels, Porto rentals, Algarve booking, premium .com domain, brandable domain",
+          "PortugalRoom, premium domain, domain for sale, Portugal rentals, room rentals Portugal, student accommodation Portugal, coliving Portugal, hospitality domain, brandable .com domain",
       },
       { name: "author", content: "PortugalRoom.com" },
       { name: "robots", content: "index, follow" },
-      { property: "og:title", content: "PortugalRoom.com — Premium Domain For Sale" },
+      { property: "og:title", content: "PortugalRoom.com | Premium Domain For Sale" },
       {
         property: "og:description",
         content:
-          "A once-in-a-generation .com domain for hospitality, real estate, and travel brands defining Portugal's next chapter.",
+          "Acquire PortugalRoom.com, a premium .COM domain perfect for room rentals, student accommodation, hospitality, travel, and property businesses in Portugal.",
       },
       { property: "og:type", content: "website" },
       { property: "og:url", content: "/" },
@@ -51,11 +52,11 @@ export const Route = createFileRoute("/")({
       { property: "og:image:alt", content: "PortugalRoom.com — Premium Domain For Sale" },
       { property: "og:locale", content: "en_US" },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:title", content: "PortugalRoom.com — Premium Domain For Sale" },
+      { name: "twitter:title", content: "PortugalRoom.com | Premium Domain For Sale" },
       {
         name: "twitter:description",
         content:
-          "A rare, brandable .com domain built for Portugal's booming hospitality and travel market.",
+          "Premium .COM domain for Portugal's rental & hospitality market. Brandable, memorable, SEO-friendly.",
       },
       { name: "twitter:image", content: "/og-image.jpg" },
       { name: "twitter:image:alt", content: "PortugalRoom.com — Premium Domain For Sale" },
@@ -70,18 +71,14 @@ export const Route = createFileRoute("/")({
           name: "PortugalRoom.com",
           category: "Premium Domain Name",
           description:
-            "Premium, brandable .com domain for hospitality, real estate, and travel ventures in Portugal.",
+            "Premium .COM domain perfect for room rentals, student accommodation, hospitality, travel, and property businesses in Portugal.",
           brand: { "@type": "Brand", name: "PortugalRoom.com" },
           image: "/og-image.jpg",
           offers: {
             "@type": "Offer",
             availability: "https://schema.org/InStock",
+            price: "2495",
             priceCurrency: "USD",
-            priceSpecification: {
-              "@type": "PriceSpecification",
-              priceCurrency: "USD",
-              description: "Make an offer",
-            },
             url: "/",
             seller: { "@type": "Organization", name: "PortugalRoom.com" },
           },
@@ -101,6 +98,8 @@ function LandingPage() {
       <Hero />
       <Features />
       <Value />
+      <PremiumDomains />
+      <FAQ />
       <Contact />
       <Footer />
     </div>
@@ -136,6 +135,7 @@ function Nav() {
         <nav className="hidden md:flex items-center gap-8 text-sm text-muted-foreground">
           <a href="#features" className="hover:text-foreground transition-colors">Features</a>
           <a href="#value" className="hover:text-foreground transition-colors">Why It Matters</a>
+          <a href="#faq" className="hover:text-foreground transition-colors">FAQ</a>
           <a href="#contact" className="hover:text-foreground transition-colors">Contact</a>
         </nav>
         <Button
@@ -151,6 +151,7 @@ function Nav() {
 }
 
 function Hero() {
+  const badges = ["Premium .COM", "Exact Match", "Brandable", "SEO Friendly"];
   return (
     <section className="relative pt-40 pb-32 px-6 overflow-hidden">
       <div className="absolute -top-40 -right-40 w-[600px] h-[600px] rounded-full bg-primary-glow/20 blur-3xl animate-float" />
@@ -169,10 +170,21 @@ function Hero() {
               <span className="text-muted-foreground font-normal">.com</span>
             </h1>
 
-            <p className="mt-8 text-xl text-muted-foreground max-w-xl leading-relaxed">
-              A once-in-a-generation domain crafted for hospitality, real estate, and travel brands
-              defining Portugal's next chapter.
+            <p className="mt-6 font-display text-2xl md:text-3xl text-foreground/90 leading-snug max-w-xl">
+              Premium .COM Domain for Portugal's Rental & Hospitality Market
             </p>
+
+            <p className="mt-6 text-lg text-muted-foreground max-w-xl leading-relaxed">
+              PortugalRoom.com is a memorable, brandable, and SEO-friendly domain perfectly suited
+              for room rentals, student accommodation, coliving, hospitality, travel platforms,
+              relocation services, and property management businesses.
+            </p>
+
+            <div className="mt-8 inline-flex flex-col items-start p-6 rounded-2xl border border-primary/20 bg-primary/5 shadow-card-luxe">
+              <div className="text-[10px] uppercase tracking-[0.25em] text-primary mb-2">Asking Price</div>
+              <div className="font-display text-4xl md:text-5xl text-gradient font-medium">$2,495 USD</div>
+              <div className="text-xs text-muted-foreground mt-2">Serious offers are welcome.</div>
+            </div>
 
             <div className="mt-10 flex flex-wrap gap-4">
               <Button
@@ -194,7 +206,18 @@ function Hero() {
               </Button>
             </div>
 
-            <div className="mt-12 flex items-center gap-8 text-sm text-muted-foreground">
+            <div className="mt-8 flex flex-wrap gap-2">
+              {badges.map((b) => (
+                <span
+                  key={b}
+                  className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full border border-primary/20 bg-card text-xs font-medium text-foreground/80"
+                >
+                  <CheckCircle2 className="w-3.5 h-3.5 text-primary" /> {b}
+                </span>
+              ))}
+            </div>
+
+            <div className="mt-10 flex items-center gap-8 text-sm text-muted-foreground">
               <div className="flex items-center gap-2"><ShieldCheck className="w-4 h-4 text-primary" /> Escrow secured</div>
               <div className="flex items-center gap-2"><Award className="w-4 h-4 text-primary" /> Verified ownership</div>
             </div>
@@ -244,12 +267,12 @@ function Hero() {
 
 function Features() {
   const items = [
-    { icon: Globe2, title: "Instant Global Trust", desc: "A .com is the universal signal of legitimacy. Zero explanation required." },
-    { icon: Sparkles, title: "Brandable & Memorable", desc: "Two words. One meaning. Impossible to mistype, impossible to forget." },
-    { icon: Building2, title: "Category Defining", desc: "Perfect for hotel groups, booking platforms, coliving, and luxury rentals." },
-    { icon: TrendingUp, title: "SEO Advantage", desc: "Exact-match keywords drive organic authority from day one." },
-    { icon: ShieldCheck, title: "Legally Clean", desc: "Fully owned, unencumbered, and transferable via secure escrow." },
-    { icon: Award, title: "Investment Grade", desc: "Premium geo domains have historically appreciated in double digits." },
+    { icon: Globe2, title: "Premium .COM", desc: "The world's most trusted domain extension that builds credibility instantly." },
+    { icon: Sparkles, title: "Highly Brandable", desc: "Simple, memorable and impossible to forget." },
+    { icon: Building2, title: "Perfect Market Fit", desc: "Ideal for room rentals, student housing, hospitality, travel and coliving." },
+    { icon: TrendingUp, title: "SEO Advantage", desc: "Contains valuable keywords for Portugal accommodation businesses." },
+    { icon: ShieldCheck, title: "Safe Ownership", desc: "Domain ownership is verified and transferred securely." },
+    { icon: Award, title: "Investment Quality", desc: "Premium geographic domains are scarce digital assets with long-term value." },
   ];
   return (
     <section id="features" className="py-32 px-6 relative">
@@ -282,12 +305,14 @@ function Features() {
 
 function Value() {
   const bullets = [
-    "Portugal is Europe's fastest-growing luxury tourism market.",
-    "'Room' universally signals hospitality, stays, and reservations.",
-    "Ideal for bookings, coliving, boutique hotels, or short-term rentals.",
-    "Golden Visa & digital nomad influx sustains long-term demand.",
-    "Two words. One meaning. Unforgettable branding.",
-    "Exact-match .com domains sell for six to seven figures annually.",
+    "Room Rental Platforms",
+    "Student Accommodation",
+    "Coliving Companies",
+    "Property Management",
+    "Travel Agencies",
+    "Hospitality Brands",
+    "Relocation Services",
+    "Vacation Rentals",
   ];
   return (
     <section id="value" className="py-32 px-6 relative">
@@ -299,10 +324,12 @@ function Value() {
             <h2 className="font-display text-5xl md:text-6xl font-medium leading-tight mb-8">
               A domain isn't a cost. It's a <span className="text-gradient italic">position</span>.
             </h2>
-            <p className="text-lg text-muted-foreground leading-relaxed mb-10">
-              PortugalRoom.com sits at the intersection of the world's most desired destination
-              and the most universal word in hospitality. It's the kind of asset that founders,
-              investors, and hospitality groups compete for — rarely for sale, never for long.
+            <p className="text-lg text-muted-foreground leading-relaxed mb-6">
+              PortugalRoom.com combines one of Europe's fastest growing destinations with one of
+              the strongest hospitality keywords.
+            </p>
+            <p className="text-lg text-foreground/90 leading-relaxed mb-10">
+              It is perfectly suited for:
             </p>
             <Button
               asChild
@@ -313,17 +340,115 @@ function Value() {
             </Button>
           </div>
 
-          <div className="space-y-3">
+          <div className="grid sm:grid-cols-2 gap-3">
             {bullets.map((b) => (
               <div
                 key={b}
-                className="flex items-start gap-4 p-5 rounded-xl bg-card border border-border hover:border-primary/30 hover:translate-x-1 transition-all duration-300"
+                className="flex items-start gap-3 p-5 rounded-xl bg-card border border-border hover:border-primary/30 hover:translate-x-1 transition-all duration-300"
               >
-                <CheckCircle2 className="w-6 h-6 text-primary flex-shrink-0 mt-0.5" />
-                <p className="text-foreground/90">{b}</p>
+                <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
+                <p className="text-foreground/90 text-sm">{b}</p>
               </div>
             ))}
           </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function PremiumDomains() {
+  const cards = [
+    {
+      icon: Award,
+      title: "Trust & Credibility",
+      desc: "Premium .COM domains signal legitimacy from the first click, giving new brands the authority of established players.",
+    },
+    {
+      icon: Sparkles,
+      title: "Memorability",
+      desc: "Short, keyword-rich domains stay in customers' minds and drive repeat direct traffic without paid acquisition.",
+    },
+    {
+      icon: TrendingUp,
+      title: "Long-Term Asset",
+      desc: "Premium geographic domains have consistently proven to be valuable, appreciating assets for businesses in local markets.",
+    },
+  ];
+  return (
+    <section className="py-32 px-6 relative">
+      <div className="max-w-7xl mx-auto">
+        <div className="max-w-2xl mb-20">
+          <div className="text-xs uppercase tracking-[0.25em] text-primary mb-4">Comparable Premium Domains</div>
+          <h2 className="font-display text-5xl md:text-6xl font-medium leading-tight mb-6">
+            Why <span className="text-gradient italic">premium domains</span> matter.
+          </h2>
+          <p className="text-lg text-muted-foreground leading-relaxed">
+            Premium .COM domains are trusted by customers, remembered more easily, and often become
+            the foundation of successful brands. Instead of chasing historical sale prices, focus on
+            what a premium geographic domain does for a business operating in a local market — it
+            becomes the front door.
+          </p>
+        </div>
+
+        <div className="grid md:grid-cols-3 gap-6">
+          {cards.map((c) => (
+            <div
+              key={c.title}
+              className="group relative p-8 rounded-2xl bg-card border border-border hover:border-primary/30 hover:shadow-card-luxe hover:-translate-y-1 transition-all duration-500"
+            >
+              <div className="w-12 h-12 rounded-xl bg-hero flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-500">
+                <c.icon className="w-6 h-6 text-white" />
+              </div>
+              <h3 className="font-display text-2xl mb-3">{c.title}</h3>
+              <p className="text-muted-foreground leading-relaxed">{c.desc}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function FAQ() {
+  const faqs = [
+    {
+      q: "How will the domain be transferred?",
+      a: "The domain will be transferred securely through Escrow.com or GoDaddy after payment.",
+    },
+    {
+      q: "How long does the transfer take?",
+      a: "Usually between 24 and 72 hours.",
+    },
+    {
+      q: "Is the asking price negotiable?",
+      a: "Reasonable offers are welcome.",
+    },
+    {
+      q: "Who owns the domain?",
+      a: "The domain is privately owned.",
+    },
+  ];
+  return (
+    <section id="faq" className="py-32 px-6 relative">
+      <div className="max-w-5xl mx-auto">
+        <div className="max-w-2xl mb-16">
+          <div className="text-xs uppercase tracking-[0.25em] text-primary mb-4">FAQ</div>
+          <h2 className="font-display text-5xl md:text-6xl font-medium leading-tight">
+            Answers, before you <span className="text-gradient italic">ask</span>.
+          </h2>
+        </div>
+
+        <div className="grid md:grid-cols-2 gap-6">
+          {faqs.map((f) => (
+            <div
+              key={f.q}
+              className="p-8 rounded-2xl bg-card border border-border hover:border-primary/30 hover:shadow-card-luxe transition-all duration-500"
+            >
+              <h3 className="font-display text-xl mb-3 text-foreground">{f.q}</h3>
+              <p className="text-muted-foreground leading-relaxed">{f.a}</p>
+            </div>
+          ))}
         </div>
       </div>
     </section>
@@ -348,9 +473,26 @@ function Contact() {
     }, 900);
   };
 
+  const trust = [
+    { icon: CheckCircle2, label: "Verified Ownership" },
+    { icon: ShieldCheck, label: "Secure Escrow Transfer" },
+    { icon: Zap, label: "Fast Domain Transfer" },
+  ];
+
   return (
     <section id="contact" className="py-32 px-6 relative">
       <div className="max-w-5xl mx-auto">
+        <div className="mb-8 flex flex-wrap justify-center gap-3">
+          {trust.map((t) => (
+            <span
+              key={t.label}
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-primary/20 bg-card text-sm font-medium text-foreground/80 shadow-card-luxe"
+            >
+              <t.icon className="w-4 h-4 text-primary" /> {t.label}
+            </span>
+          ))}
+        </div>
+
         <div className="relative rounded-3xl overflow-hidden shadow-luxe border border-border">
           <div className="absolute inset-0 bg-hero" />
           <div
@@ -369,7 +511,7 @@ function Contact() {
               </h2>
               <p className="text-white/80 leading-relaxed mb-10">
                 Submit a serious inquiry and receive a response within 24 hours. All transactions
-                are handled through Escrow.com for complete security.
+                are handled through Escrow.com or GoDaddy for complete security.
               </p>
               <div className="space-y-4 text-sm">
                 <div className="flex items-center gap-3"><Mail className="w-4 h-4" /> roominportugal@gmail.com</div>
@@ -389,7 +531,7 @@ function Contact() {
               </div>
               <div>
                 <Label htmlFor="offer" className="mb-2 block">Offer (USD)</Label>
-                <Input id="offer" value={form.offer} onChange={(e) => setForm({ ...form, offer: e.target.value })} placeholder="$50,000" className="h-12" />
+                <Input id="offer" value={form.offer} onChange={(e) => setForm({ ...form, offer: e.target.value })} placeholder="Enter your offer" className="h-12" />
               </div>
               <div>
                 <Label htmlFor="message" className="mb-2 block">Message (optional)</Label>
@@ -416,8 +558,11 @@ function Footer() {
     <footer className="py-12 px-6 border-t border-border">
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
         <Logo />
-        <div className="text-sm text-muted-foreground">
-          © {new Date().getFullYear()} PortugalRoom.com — All rights reserved.
+        <div className="text-sm text-muted-foreground text-center md:text-right space-y-1">
+          <div className="font-display text-base text-foreground">PortugalRoom.com</div>
+          <div>Premium Domain Available for Acquisition</div>
+          <div>Transfer secured via Escrow.com or GoDaddy</div>
+          <div className="pt-2">© 2026 PortugalRoom.com — All rights reserved.</div>
         </div>
       </div>
     </footer>
