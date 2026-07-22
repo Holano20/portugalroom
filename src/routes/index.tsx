@@ -24,24 +24,24 @@ import heroImage from "@/assets/portugal-hero.jpg";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "PortugalRoom.com | Premium Domain For Sale" },
+      { title: "PortugalRoom.com — Premium .COM Domain for Portugal Rentals & Hospitality" },
       {
         name: "description",
         content:
-          "Acquire PortugalRoom.com, a premium .COM domain perfect for room rentals, student accommodation, hospitality, travel, and property businesses in Portugal.",
+          "PortugalRoom.com is a premium, brandable .COM domain for room rentals, student housing, coliving, hospitality, travel, and property businesses in Portugal. Secure transfer via Escrow.com or GoDaddy.",
       },
       {
         name: "keywords",
         content:
-          "PortugalRoom, premium domain, domain for sale, Portugal rentals, room rentals Portugal, student accommodation Portugal, coliving Portugal, hospitality domain, brandable .com domain",
+          "PortugalRoom, premium domain, .com domain for sale, Portugal rentals, room rentals Portugal, student accommodation Portugal, coliving Portugal, hospitality domain, brandable domain, Escrow domain transfer",
       },
       { name: "author", content: "PortugalRoom.com" },
       { name: "robots", content: "index, follow" },
-      { property: "og:title", content: "PortugalRoom.com | Premium Domain For Sale" },
+      { property: "og:title", content: "PortugalRoom.com — Premium .COM Domain for Portugal Rentals & Hospitality" },
       {
         property: "og:description",
         content:
-          "Acquire PortugalRoom.com, a premium .COM domain perfect for room rentals, student accommodation, hospitality, travel, and property businesses in Portugal.",
+          "A rare, exact-match .COM domain for Portugal's rental and hospitality market. Brandable, memorable, SEO-friendly. Secure transfer via Escrow.com or GoDaddy.",
       },
       { property: "og:type", content: "website" },
       { property: "og:url", content: "/" },
@@ -49,17 +49,17 @@ export const Route = createFileRoute("/")({
       { property: "og:image", content: "/og-image.jpg" },
       { property: "og:image:width", content: "1200" },
       { property: "og:image:height", content: "630" },
-      { property: "og:image:alt", content: "PortugalRoom.com — Premium Domain For Sale" },
+      { property: "og:image:alt", content: "PortugalRoom.com — Premium .COM Domain for Portugal's Rental & Hospitality Market" },
       { property: "og:locale", content: "en_US" },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:title", content: "PortugalRoom.com | Premium Domain For Sale" },
+      { name: "twitter:title", content: "PortugalRoom.com — Premium .COM Domain for Portugal Rentals & Hospitality" },
       {
         name: "twitter:description",
         content:
-          "Premium .COM domain for Portugal's rental & hospitality market. Brandable, memorable, SEO-friendly.",
+          "Premium .COM domain for Portugal's rental & hospitality market. Brandable, memorable, SEO-friendly. Secure transfer via Escrow.com or GoDaddy.",
       },
       { name: "twitter:image", content: "/og-image.jpg" },
-      { name: "twitter:image:alt", content: "PortugalRoom.com — Premium Domain For Sale" },
+      { name: "twitter:image:alt", content: "PortugalRoom.com — Premium .COM Domain for Portugal's Rental & Hospitality Market" },
     ],
     links: [{ rel: "canonical", href: "/" }],
     scripts: [
@@ -184,6 +184,7 @@ function Hero() {
               <div className="text-[10px] uppercase tracking-[0.25em] text-primary mb-2">Asking Price</div>
               <div className="font-display text-4xl md:text-5xl text-gradient font-medium">$2,495 USD</div>
               <div className="text-xs text-muted-foreground mt-2">Serious offers are welcome.</div>
+              <div className="text-xs text-muted-foreground mt-1">Secure transfer via Escrow.com or GoDaddy.</div>
             </div>
 
             <div className="mt-10 flex flex-wrap gap-4">
@@ -227,9 +228,12 @@ function Hero() {
             <div className="relative rounded-3xl overflow-hidden shadow-luxe">
               <img
                 src={heroImage}
-                alt="Aerial view of Lisbon Portugal"
+                alt="PortugalRoom.com — aerial view of Lisbon, Portugal at golden hour representing the country's rental and hospitality market"
                 width={1600}
                 height={1000}
+                loading="eager"
+                fetchPriority="high"
+                decoding="async"
                 className="w-full h-[520px] object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-primary/40 via-transparent to-transparent" />
@@ -250,7 +254,7 @@ function Hero() {
         <div className="mt-24 grid grid-cols-2 md:grid-cols-4 gap-px bg-border rounded-2xl overflow-hidden border border-border">
           {[
             { k: "€27B", v: "Portugal tourism GDP" },
-            { k: "30M+", v: "Annual visitors" },
+            { k: "30M+", v: "Annual Tourists" },
             { k: "1 of 1", v: "Exact-match domain" },
             { k: ".com", v: "Global TLD" },
           ].map((m) => (
@@ -267,12 +271,12 @@ function Hero() {
 
 function Features() {
   const items = [
-    { icon: Globe2, title: "Premium .COM", desc: "The world's most trusted domain extension that builds credibility instantly." },
-    { icon: Sparkles, title: "Highly Brandable", desc: "Simple, memorable and impossible to forget." },
-    { icon: Building2, title: "Perfect Market Fit", desc: "Ideal for room rentals, student housing, hospitality, travel and coliving." },
-    { icon: TrendingUp, title: "SEO Advantage", desc: "Contains valuable keywords for Portugal accommodation businesses." },
-    { icon: ShieldCheck, title: "Safe Ownership", desc: "Domain ownership is verified and transferred securely." },
-    { icon: Award, title: "Investment Quality", desc: "Premium geographic domains are scarce digital assets with long-term value." },
+    { icon: Globe2, title: "Premium .COM Extension", desc: "The world's most trusted top-level domain — instant credibility with customers, partners, and investors." },
+    { icon: Sparkles, title: "Effortlessly Brandable", desc: "Short, elegant, and unmistakable — a name customers remember the first time they hear it." },
+    { icon: Building2, title: "Precise Market Fit", desc: "Purpose-built for room rentals, student housing, coliving, hospitality, travel, and property brands." },
+    { icon: TrendingUp, title: "Built-in SEO Advantage", desc: "Exact-match keywords for Portugal's accommodation sector — a lasting edge in organic search." },
+    { icon: ShieldCheck, title: "Secure, Verified Ownership", desc: "Privately owned and transferred through Escrow.com or GoDaddy for a fully protected acquisition." },
+    { icon: Award, title: "Long-Term Digital Asset", desc: "Premium geographic .COM domains are scarce, appreciating assets — a foundation, not an expense." },
   ];
   return (
     <section id="features" className="py-32 px-6 relative">
@@ -336,7 +340,7 @@ function Value() {
               size="lg"
               className="bg-hero text-white h-14 px-8 shadow-luxe hover:scale-[1.02] transition-transform"
             >
-              <a href="#contact">Secure This Domain <ArrowRight className="ml-2 w-5 h-5" /></a>
+              <a href="#contact">Make an Offer <ArrowRight className="ml-2 w-5 h-5" /></a>
             </Button>
           </div>
 
@@ -427,6 +431,10 @@ function FAQ() {
     {
       q: "Who owns the domain?",
       a: "The domain is privately owned.",
+    },
+    {
+      q: "Can I use Escrow.com or GoDaddy for the purchase?",
+      a: "Yes. Escrow.com and or GoDaddy is welcome and recommended for a secure transaction.",
     },
   ];
   return (
@@ -545,6 +553,9 @@ function Contact() {
                 {loading ? "Submitting…" : "Submit Offer"}
                 <ArrowRight className="ml-2 w-5 h-5" />
               </Button>
+              <p className="text-xs text-muted-foreground text-center pt-1">
+                Serious inquiries only. We usually respond within 24 hours.
+              </p>
             </form>
           </div>
         </div>
@@ -560,7 +571,12 @@ function Footer() {
         <Logo />
         <div className="text-sm text-muted-foreground text-center md:text-right space-y-1">
           <div className="font-display text-base text-foreground">PortugalRoom.com</div>
-          <div>Premium Domain Available for Acquisition</div>
+          <div>Premium Domain for Sale</div>
+          <div>
+            <a href="mailto:roominportugal@gmail.com" className="hover:text-foreground transition-colors">
+              roominportugal@gmail.com
+            </a>
+          </div>
           <div>Transfer secured via Escrow.com or GoDaddy</div>
           <div className="pt-2">© 2026 PortugalRoom.com — All rights reserved.</div>
         </div>
