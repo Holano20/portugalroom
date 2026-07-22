@@ -184,6 +184,7 @@ function Hero() {
               <div className="text-[10px] uppercase tracking-[0.25em] text-primary mb-2">Asking Price</div>
               <div className="font-display text-4xl md:text-5xl text-gradient font-medium">$2,495 USD</div>
               <div className="text-xs text-muted-foreground mt-2">Serious offers are welcome.</div>
+              <div className="text-xs text-muted-foreground mt-1">Secure transfer via Escrow.com or GoDaddy.</div>
             </div>
 
             <div className="mt-10 flex flex-wrap gap-4">
