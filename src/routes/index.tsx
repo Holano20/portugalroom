@@ -432,6 +432,10 @@ function FAQ() {
       q: "Who owns the domain?",
       a: "The domain is privately owned.",
     },
+    {
+      q: "Can I use Escrow.com or GoDaddy for the purchase?",
+      a: "Yes. Escrow.com and or GoDaddy is welcome and recommended for a secure transaction.",
+    },
   ];
   return (
     <section id="faq" className="py-32 px-6 relative">
