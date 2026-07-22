@@ -41,7 +41,7 @@ export const Route = createFileRoute("/")({
       {
         property: "og:description",
         content:
-          "A rare, exact-match .COM domain for Portugal's rental and hospitality market. Brandable, memorable, SEO-friendly. Secure transfer via Escrow.com or GoDaddy.",
+          "PortugalRoom.com is a premium, brandable .COM domain for room rentals, student housing, coliving, hospitality, travel, and property businesses in Portugal. Secure transfer via Escrow.com or GoDaddy.",
       },
       { property: "og:type", content: "website" },
       { property: "og:url", content: "/" },
@@ -56,7 +56,7 @@ export const Route = createFileRoute("/")({
       {
         name: "twitter:description",
         content:
-          "Premium .COM domain for Portugal's rental & hospitality market. Brandable, memorable, SEO-friendly. Secure transfer via Escrow.com or GoDaddy.",
+          "PortugalRoom.com is a premium, brandable .COM domain for room rentals, student housing, coliving, hospitality, travel, and property businesses in Portugal. Secure transfer via Escrow.com or GoDaddy.",
       },
       { name: "twitter:image", content: "/og-image.jpg" },
       { name: "twitter:image:alt", content: "PortugalRoom.com — Premium .COM Domain for Portugal's Rental & Hospitality Market" },
