@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://portugalroom.lovable.app/sitemap.xml
